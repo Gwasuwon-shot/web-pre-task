@@ -7,7 +7,7 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
+    // "prettier/@typescript-eslint",
   ],
   rules: {
     "linebreak-style": 0,
@@ -20,10 +20,9 @@ module.exports = {
     "react/jsx-filename-extension": [2, { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
     "jsx-a11y/no-noninteractive-element-interactions": 0,
     "eol-last": ["error", "always"], // line의 가장 마지막 줄에는 개행 넣기
-    "simple-import-sort/imports": "error", // import 정렬
-    "no-multi-spaces": "error", // 스페이스 여러개 금지
-    "eol-last": ["error", "always"], // line의 가장 마지막 줄에는 개행 넣기
-    "simple-import-sort/imports": "error", // import 정렬
+    // "simple-import-sort/imports": "error", // import 정렬
+    // 'simple-import-sort/imports': 'error',
+    "react/react-in-jsx-scope": "off",
     "no-multi-spaces": "error", // 스페이스 여러개 금지
   },
 };

@@ -35,8 +35,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     touch-action: manipulation;
     line-height: 1;
-    background-color: ${({ theme }) => theme.colors.sub3};
-
   }
   menu, ol, ul {
     list-style: none;
@@ -66,25 +64,8 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
 
     font-family: sans-serif;
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
     user-select: none;
-    @media (min-width:1800px){
-      font-size: 62.5%;
-    }
-    @media (min-width:1420px) and (max-width:1799px){
-      font-size: 46.8%;
-    }
-    @media (min-width:900px) and (max-width:1419px){
-      font-size: 42%;
-    }
-    @media (min-width: 768px) and (max-width:899px){ 
-      font-size: 35%;
-    }
-    @media (max-width:767px){ 
-      font-size: 32%;
-    }
-    
-
   }
   ul, li {
     padding-left: 0rem;
@@ -110,28 +91,5 @@ export const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
-  input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0 1000px #16161C inset;
-	box-shadow: 0 0 0 1000px #16161C inset;
-  color:white!important;
-  -webkit-color:white;
-  -webkit-text-fill-color: white !important;
-
-  font-family: "Pretendard";
-  font-weight : 400;
-  font-size : 1.8;
-  line-height : 3.5;
-  }
-  input:-internal-autofill-selected {
-    appearance: menulist-button;
-    background-image: none !important;
-    background-color: transparent !important;
-    color: white !important;
-
-    font-family: "Pretendard";
-    font-weight : 400;
-    font-size : 1.8;
-    line-height : 3.5;
-
-  }
+ 
 `;

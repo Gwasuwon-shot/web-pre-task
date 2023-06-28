@@ -22,5 +22,7 @@ module.exports = {
     "eol-last": ["error", "always"], // line의 가장 마지막 줄에는 개행 넣기
     "react/react-in-jsx-scope": "off",
     "no-multi-spaces": "error", // 스페이스 여러개 금지
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
   },
 };

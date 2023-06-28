@@ -23,6 +23,5 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "no-multi-spaces": "error", // 스페이스 여러개 금지
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
   },
 };

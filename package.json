@@ -11,6 +11,7 @@
     "format": "prettier --write --cache ."
   },
   "dependencies": {
+    "date-fns": "^2.30.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",

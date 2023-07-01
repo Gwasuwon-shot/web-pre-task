@@ -1,4 +1,3 @@
-import Calendar from "react-calendar";
 import { styled } from "styled-components";
 import "react-calendar/dist/Calendar.css";
 
@@ -6,9 +5,7 @@ export default function BeanCalendar() {
   return (
     <>
       <Header> 비니 캘린더 </Header>
-      <CalendarWrapper>
-        <Calendar />
-      </CalendarWrapper>
+      <CalendarWrapper></CalendarWrapper>
     </>
   );
 }

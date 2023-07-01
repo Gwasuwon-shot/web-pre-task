@@ -23,16 +23,17 @@ export default function JisooCalendar() {
       tileContent={({ date, view }) => {
         // 날짜 타일에 컨텐츠 추가하기 (html 태그)
         // 추가할 html 태그를 변수 초기화
-        let html = [];
+        let html: any[] = [];
         // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
         {
           mark.map(
-            ({ id, student, time, date }: calendarDatatTypes) =>
-              date.find((x) => x === moment(date).format("YYYY-MM-DD")) && (
+            ({ id, student, time, dates }: calendarDatatTypes) =>
+              dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
+              html.push(
                 <Dot key={id}>
                   {student}
                   {time}
-                </Dot>
+                </Dot>,
               ),
           );
         }
@@ -40,11 +41,11 @@ export default function JisooCalendar() {
         //   html.push(<Dot></Dot>);
         // }
         // // 다른 조건을 주어서 html.push 에 추가적인 html 태그를 적용할 수 있음.
-        // return (
-        //   <>
-        //     <div className="flex justify-center items-center absoluteDiv">{html}</div>
-        //   </>
-        // );
+        return (
+          <>
+            <div className="flex justify-center items-center absoluteDiv">{html}</div>
+          </>
+        );
       }}
     />
   );

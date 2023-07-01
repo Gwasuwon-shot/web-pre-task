@@ -3,4 +3,5 @@ export interface calendarDatatTypes {
   student: string;
   time: string;
   dates: string[];
+  color: string;
 }

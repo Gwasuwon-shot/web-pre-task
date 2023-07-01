@@ -18,7 +18,7 @@ export default function JisooCalendar() {
       navigationLabel={null}
       showNeighboringMonth={false} //  이전, 이후 달의 날짜는 보이지 않도록 설정
       className="mx-auto w-full text-sm border-b"
-      tileContent={({ date }) => {
+      tileContent={({ date, view }) => {
         // 날짜 타일에 컨텐츠 추가하기 (html 태그)
         // 추가할 html 태그를 변수 초기화
         let html = [];

@@ -11,39 +11,41 @@ export default function JisooCalendar() {
   const [mark, setMark] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
 
   return (
-    <Calendar
-      onChange={onChange} // useState로 포커스 변경 시 현재 날짜 받아오기
-      formatDay={(locale, date) => moment(date).format("DD")} // 날'일' 제외하고 숫자만 보이도록 설정
-      value={value}
-      minDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
-      maxDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
-      navigationLabel={null}
-      showNeighboringMonth={false} //  이전, 이후 달의 날짜는 보이지 않도록 설정
-      className="mx-auto w-full text-sm border-b"
-      tileContent={({ date, view }) => {
-        // 날짜 타일에 컨텐츠 추가하기 (html 태그)
-        // 추가할 html 태그를 변수 초기화
-        let html: any[] = [];
-        // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
-        {
-          mark.map(
-            ({ id, student, time, dates }: calendarDatatTypes) =>
-              dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
-              html.push(
-                <Box key={id}>
-                  {student}
-                  {time}
-                </Box>,
-              ),
+    <JisooCalendarWrapper>
+      <Calendar
+        onChange={onChange} // useState로 포커스 변경 시 현재 날짜 받아오기
+        formatDay={(locale, date) => moment(date).format("DD")} // 날'일' 제외하고 숫자만 보이도록 설정
+        value={value}
+        minDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
+        maxDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
+        navigationLabel={null}
+        showNeighboringMonth={false} //  이전, 이후 달의 날짜는 보이지 않도록 설정
+        className="mx-auto w-full text-sm border-b"
+        tileContent={({ date, view }) => {
+          // 날짜 타일에 컨텐츠 추가하기 (html 태그)
+          // 추가할 html 태그를 변수 초기화
+          let html: any[] = [];
+          // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
+          {
+            mark.map(
+              ({ id, student, time, dates }: calendarDatatTypes) =>
+                dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
+                html.push(
+                  <Box key={id}>
+                    {student}
+                    {time}
+                  </Box>,
+                ),
+            );
+          }
+          return (
+            <>
+              <div className="flex justify-center items-center absoluteDiv">{html}</div>
+            </>
           );
-        }
-        return (
-          <>
-            <div className="flex justify-center items-center absoluteDiv">{html}</div>
-          </>
-        );
-      }}
-    />
+        }}
+      />
+    </JisooCalendarWrapper>
   );
 }
 
@@ -57,4 +59,63 @@ const Box = styled.button`
   border-radius: 5px;
 
   background-color: #f87171;
+`;
+
+const JisooCalendarWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+
+  .react-calendar__navigation button:disabled {
+    //제목
+    color: ${({ theme }) => theme.colors.main};
+    background-color: ${({ theme }) => theme.colors.white};
+    ${({ theme }) => theme.fonts.body1};
+  }
+
+  .react-calendar {
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    ${({ theme }) => theme.fonts.body1};
+  }
+  .react-calendar__month-view {
+    // 날짜
+    abbr {
+      color: ${({ theme }) => theme.colors.black};
+    }
+  }
+  .react-calendar__month-view__weekdays {
+    // 요일
+    abbr {
+      ${({ theme }) => theme.fonts.body1};
+      font-size: 1.6rem;
+      text-decoration: none;
+    }
+  }
+  .react-calendar__tile {
+    //타일 한 칸
+    text-align: center;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /*hover, focus, 선택됐을 시 */
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus,
+  .react-calendar__tile--active {
+    background-color: ${({ theme }) => theme.colors.white};
+    outline: none;
+    cursor: default;
+  }
+  /* 오늘 날짜 */
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus,
+  .react-calendar__tile--now {
+    background: ${({ theme }) => theme.colors.gray1};
+    border-radius: 10px;
+  }
 `;

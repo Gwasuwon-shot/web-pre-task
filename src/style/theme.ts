@@ -46,7 +46,6 @@ const fonts = {
   caption_large: FONT({ weight: 300, size: 3, lineHeight: 3.9 }),
   title: FONT({ weight: 300, size: 5, lineHeight: 6.5 }),
   input: FONT({ weight: 400, size: 2, lineHeight: 3.4 }),
-
   message: FONT({ weight: 400, size: 1.6, lineHeight: 1.9 }),
   typography_title: FONT({ weight: 700, size: 2, lineHeight: 2 }),
   typography_intro: FONT({ weight: 600, size: 1.5, lineHeight: 2.4 }),

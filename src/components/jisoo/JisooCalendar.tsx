@@ -8,7 +8,7 @@ import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 
 export default function JisooCalendar() {
   const [value, onChange] = useState(new Date());
-  const [mark, setMark] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
+  const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
 
   return (
     <JisooCalendarWrapper>
@@ -26,22 +26,19 @@ export default function JisooCalendar() {
           let html: any[] = [];
           // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
           {
-            mark.map(
+            classData.map(
               ({ id, student, time, dates, color }: calendarDatatTypes) =>
                 dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
                 html.push(
-                  <Box key={id} $cㄴolor={color}>
+                  <Box key={id} $color={color}>
                     <p>{student}</p>
                     <p>{time}</p>
                   </Box>,
                 ),
             );
           }
-          return (
-            <>
-              <div className="flex justify-center items-center absoluteDiv">{html}</div>
-            </>
-          );
+          console.log(html);
+          return <>{html}</>;
         }}
       />
     </JisooCalendarWrapper>

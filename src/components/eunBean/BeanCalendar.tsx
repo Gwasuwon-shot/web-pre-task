@@ -7,7 +7,7 @@ import Toolbar from "./customCalendar/Toolbar";
 export default function BeanCalendar() {
   moment.locale("ko-KR");
   const localizer = momentLocalizer(moment);
-  const myEventsList = [{ start: new Date(), end: new Date(), title: "special event" }];
+  const myEventsList = [{ start: new Date(), end: new Date(), title: "special event", tooltip: "isitThere?" }];
 
   return (
     <>
@@ -15,11 +15,11 @@ export default function BeanCalendar() {
       <CalendarWrapper>
         <Calendar
           localizer={localizer}
-          style={{ height: 500 }}
+          style={{ height: 500, width: 500 }}
+          events={myEventsList}
           components={{
             toolbar: Toolbar,
           }}
-          events={myEventsList}
         />
       </CalendarWrapper>
     </>

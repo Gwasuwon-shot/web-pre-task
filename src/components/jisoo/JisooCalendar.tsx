@@ -28,10 +28,10 @@ export default function JisooCalendar() {
           // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
           {
             mark.map(
-              ({ id, student, time, dates }: calendarDatatTypes) =>
+              ({ id, student, time, dates, color }: calendarDatatTypes) =>
                 dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
                 html.push(
-                  <Box key={id}>
+                  <Box key={id} $color={color}>
                     <p>{student}</p>
                     <p>{time}</p>
                   </Box>,
@@ -49,7 +49,7 @@ export default function JisooCalendar() {
   );
 }
 
-const Box = styled.button`
+const Box = styled.button<{ $color: string }>`
   display: flex;
 
   padding: 1rem;
@@ -57,7 +57,7 @@ const Box = styled.button`
 
   border-radius: 5px;
 
-  background-color: #f87171;
+  background-color: ${({ $color }) => $color};
 `;
 
 const JisooCalendarWrapper = styled.div`

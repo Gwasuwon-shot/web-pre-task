@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CalendarHeader from "./CalendarHeader";
 import { format, subMonths, addMonths } from "date-fns";
+import Week from "./Week";
 
 export default function Calendar() {
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -12,5 +13,10 @@ export default function Calendar() {
     setCurrentMonth(addMonths(currentMonth, 1));
   }
 
-  return <CalendarHeader prevMonth={prevMonth} nextMonth={nextMonth} currentMonth={currentMonth} />;
+  return (
+    <div>
+      <CalendarHeader prevMonth={prevMonth} nextMonth={nextMonth} currentMonth={currentMonth} />
+      <Week />
+    </div>
+  );
 }

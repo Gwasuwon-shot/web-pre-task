@@ -9,6 +9,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<EunBean />} />
         <Route path="/eun-bean" element={<EunBean />} />
         <Route path="/hee-jung" element={<HeeJung />} />
         <Route path="/hye-in" element={<Hyein />} />

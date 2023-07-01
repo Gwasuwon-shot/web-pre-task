@@ -32,8 +32,8 @@ export default function JisooCalendar() {
                 dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
                 html.push(
                   <Box key={id}>
-                    {student}
-                    {time}
+                    <p>{student}</p>
+                    <p>{time}</p>
                   </Box>,
                 ),
             );
@@ -52,9 +52,8 @@ export default function JisooCalendar() {
 const Box = styled.button`
   display: flex;
 
-  height: 2rem;
   padding: 1rem;
-  margin: 1px;
+  margin: 1rem !important;
 
   border-radius: 5px;
 
@@ -77,7 +76,6 @@ const JisooCalendarWrapper = styled.div`
     border: none;
     width: 100%;
     height: 100%;
-    font-size: 1.6rem;
     ${({ theme }) => theme.fonts.body1};
   }
   .react-calendar__month-view {
@@ -90,14 +88,14 @@ const JisooCalendarWrapper = styled.div`
     // 요일
     abbr {
       ${({ theme }) => theme.fonts.body1};
-      font-size: 1.6rem;
       text-decoration: none;
     }
   }
   .react-calendar__tile {
     //타일 한 칸
     text-align: center;
-    height: 10rem;
+    min-height: 10rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -107,15 +105,15 @@ const JisooCalendarWrapper = styled.div`
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus,
   .react-calendar__tile--active {
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.gray1};
     outline: none;
-    cursor: default;
+    cursor: pointer;
   }
   /* 오늘 날짜 */
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus,
   .react-calendar__tile--now {
-    background: ${({ theme }) => theme.colors.gray1};
+    background: ${({ theme }) => theme.colors.sub1};
     border-radius: 10px;
   }
 `;

@@ -61,10 +61,10 @@ export default function BeanCalendar() {
     event: (props: any) => {
       const eventType = props?.event?.data?.type;
       switch (eventType) {
-        case "은빈":
-          return <div style={{ background: "yellow", color: "white", height: "100%" }}>{props.title}</div>;
-        case "희정":
-          return <div style={{ background: "lightgreen", color: "white", height: "100%" }}>{props.title}</div>;
+        case "비니":
+          return <div style={{ background: "yellow", color: "black", height: "100%" }}>{props.title}</div>;
+        case "히정":
+          return <div style={{ background: "lightgreen", color: "black", height: "100%" }}>{props.title}</div>;
         default:
           return null;
       }
@@ -81,12 +81,10 @@ export default function BeanCalendar() {
           events={eventList}
           startAccessor="start"
           endAccessor="end"
-          components={
-            (components,
-            {
-              toolbar: Toolbar,
-            })
-          }
+          components={{
+            ...components,
+            toolbar: Toolbar,
+          }}
         />
       </CalendarWrapper>
     </>

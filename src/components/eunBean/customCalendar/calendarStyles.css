@@ -158,12 +158,12 @@ button.rbc-input::-moz-focus-inner {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
   margin-bottom: 10px;
   font-size: 16px;
 }
@@ -172,7 +172,7 @@ button.rbc-input::-moz-focus-inner {
   -ms-flex-positive: 1;
   flex-grow: 1;
   padding: 0 10px;
-  text-align: center;
+  text-align: left;
 }
 .rbc-toolbar button {
   color: #373a3c;
@@ -261,7 +261,7 @@ button.rbc-input::-moz-focus-inner {
   box-shadow: none;
   margin: 0;
   padding: 2px 5px;
-  background-color: #3174ad;
+  /* background-color: #ffff; */
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
@@ -276,11 +276,11 @@ button.rbc-input::-moz-focus-inner {
 }
 .rbc-event.rbc-selected,
 .rbc-day-slot .rbc-selected.rbc-background-event {
-  background-color: #265985;
+  background-color: beige;
 }
 .rbc-event:focus,
 .rbc-day-slot .rbc-background-event:focus {
-  outline: 5px auto #3b99fc;
+  /* outline: 5px auto #3b99fc; */
 }
 
 .rbc-event-label {

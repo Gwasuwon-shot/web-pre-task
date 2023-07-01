@@ -3,10 +3,12 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { styled } from "styled-components";
+import { CAELENDAR_DATA } from "../../core/jisoo/calendarData";
+import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 
 export default function JisooCalendar() {
   const [value, onChange] = useState(new Date());
-  const [mark, setMark] = useState<string[]>(["2023-07-06", "2023-07-13", "2023-07-20", "2023-07-27"]);
+  const [mark, setMark] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
 
   return (
     <Calendar
@@ -23,15 +25,26 @@ export default function JisooCalendar() {
         // 추가할 html 태그를 변수 초기화
         let html = [];
         // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
-        if (mark.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
-          html.push(<Dot></Dot>);
+        {
+          mark.map(
+            ({ id, student, time, date }: calendarDatatTypes) =>
+              date.find((x) => x === moment(date).format("YYYY-MM-DD")) && (
+                <Dot key={id}>
+                  {student}
+                  {time}
+                </Dot>
+              ),
+          );
         }
-        // 다른 조건을 주어서 html.push 에 추가적인 html 태그를 적용할 수 있음.
-        return (
-          <>
-            <div className="flex justify-center items-center absoluteDiv">{html}</div>
-          </>
-        );
+        // if (mark.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
+        //   html.push(<Dot></Dot>);
+        // }
+        // // 다른 조건을 주어서 html.push 에 추가적인 html 태그를 적용할 수 있음.
+        // return (
+        //   <>
+        //     <div className="flex justify-center items-center absoluteDiv">{html}</div>
+        //   </>
+        // );
       }}
     />
   );

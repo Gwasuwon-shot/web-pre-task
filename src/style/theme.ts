@@ -26,7 +26,7 @@ interface Font {
   lineHeight: number;
 }
 
-function FONT({weight, size, lineHeight }: Font): string {
+function FONT({ weight, size, lineHeight }: Font): string {
   return `
     font-family: "Pretendard"
     font-weight : ${weight};
@@ -52,7 +52,6 @@ const fonts = {
   typography_intro: FONT({ weight: 600, size: 1.5, lineHeight: 2.4 }),
   typography_content: FONT({ weight: 500, size: 1.5, lineHeight: 2.4 }),
   checkbox: FONT({ weight: 400, size: 1.6, lineHeight: 1.6 }),
-
 };
 
 export type FontsTypes = typeof fonts;

@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
+import "./customCalendar/calendarStyles.css";
 import Toolbar from "./customCalendar/Toolbar";
 
 export default function BeanCalendar() {
   moment.locale("ko-KR");
   const localizer = momentLocalizer(moment);
-  const myEventsList = [{ start: new Date(), end: new Date(), title: "special event", tooltip: "isitThere?" }];
+  const myEventsList = [{ start: new Date(), end: new Date(), title: "special event" }];
 
   return (
     <>

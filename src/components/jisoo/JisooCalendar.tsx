@@ -37,10 +37,6 @@ export default function JisooCalendar() {
               ),
           );
         }
-        // if (mark.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
-        //   html.push(<Dot></Dot>);
-        // }
-        // // 다른 조건을 주어서 html.push 에 추가적인 html 태그를 적용할 수 있음.
         return (
           <>
             <div className="flex justify-center items-center absoluteDiv">{html}</div>

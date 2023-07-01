@@ -30,10 +30,10 @@ export default function JisooCalendar() {
             ({ id, student, time, dates }: calendarDatatTypes) =>
               dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
               html.push(
-                <Dot key={id}>
+                <Box key={id}>
                   {student}
                   {time}
-                </Dot>,
+                </Box>,
               ),
           );
         }
@@ -51,11 +51,14 @@ export default function JisooCalendar() {
   );
 }
 
-const Dot = styled.div`
-  height: 8px;
-  width: 8px;
-  background-color: #f87171;
-  border-radius: 50%;
+const Box = styled.button`
   display: flex;
-  margin-left: 1px;
+
+  height: 2rem;
+  padding: 1rem;
+  margin: 1px;
+
+  border-radius: 5px;
+
+  background-color: #f87171;
 `;

@@ -5,9 +5,5 @@ import "react-calendar/dist/Calendar.css";
 export default function JisooCalendar() {
   const [value, setValue] = useState<Date>(new Date());
 
-  return (
-    <div>
-      <Calendar onChange={setValue} value={value} />
-    </div>
-  );
+  return <Calendar onChange={setValue} value={value} />;
 }

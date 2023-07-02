@@ -1,4 +1,6 @@
-export const SCHEDULES = [
+import {ScheduleType} from '../type/ScheduleType';
+
+export const SCHEDULE: ScheduleType[] = [
     {
         id: 1, 
         student: "지수", 

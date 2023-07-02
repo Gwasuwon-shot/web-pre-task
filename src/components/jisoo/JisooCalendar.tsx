@@ -23,7 +23,7 @@ export default function JisooCalendar() {
     <JisooCalendarContainer>
       {openModal && (
         <Modal>
-          <h1>{value.toISOString().substr(0, 10)}</h1>
+          <ModalTitle>{value.toISOString().substr(0, 10)}</ModalTitle>
           <XButton onClick={handleCloseModal}>X</XButton>
         </Modal>
       )}
@@ -62,6 +62,10 @@ export default function JisooCalendar() {
   );
 }
 
+const ModalTitle = styled.h1`
+  ${({ theme }) => theme.fonts.caption_large};
+`;
+
 const XButton = styled.p`
   ${({ theme }) => theme.fonts.caption_large};
 
@@ -76,11 +80,13 @@ const JisooCalendarContainer = styled.div`
 
 const Modal = styled.aside`
   display: flex;
+  justify-content: space-between;
 
   position: absolute;
 
   width: 50rem;
   height: 40rem;
+  padding: 3rem;
 
   border: 1px solid ${({ theme }) => theme.colors.black};
   border-radius: 5px;

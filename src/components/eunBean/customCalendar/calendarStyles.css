@@ -173,6 +173,8 @@ button.rbc-input::-moz-focus-inner {
   flex-grow: 1;
   padding: 0 10px;
   text-align: left;
+  font-size: 2rem;
+  font-weight: 400;
 }
 .rbc-toolbar button {
   color: #373a3c;

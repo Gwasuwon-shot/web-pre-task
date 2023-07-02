@@ -8,6 +8,7 @@ export default function BeanCalendar() {
   moment.locale("ko-KR");
   const localizer = momentLocalizer(moment);
 
+  // 이벤트 리스트
   const eventList = [
     {
       id: 0,
@@ -57,6 +58,7 @@ export default function BeanCalendar() {
     },
   ];
 
+  //  카테고리에 따른 색 지정
   const components = {
     event: (props: any) => {
       const eventType = props?.event?.data?.type;
@@ -69,6 +71,11 @@ export default function BeanCalendar() {
           return null;
       }
     },
+  };
+
+  // 날짜 한글로
+  const formats = {
+    weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
   };
 
   return (
@@ -85,6 +92,7 @@ export default function BeanCalendar() {
             ...components,
             toolbar: Toolbar,
           }}
+          formats={formats}
         />
       </CalendarWrapper>
     </>

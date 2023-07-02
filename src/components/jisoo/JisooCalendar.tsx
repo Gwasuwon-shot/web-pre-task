@@ -16,8 +16,11 @@ export default function JisooCalendar() {
   }
 
   return (
-    <>
-      <h1>{value.toISOString().substr(0, 10)}</h1>
+    <JisooCalendarContainer>
+      <Modal>
+        <h1>{value.toISOString().substr(0, 10)}</h1>
+        <p>X</p>
+      </Modal>
       <JisooCalendarWrapper onClick={handleOpenNCloseModal}>
         <Calendar
           onChange={onChange}
@@ -50,9 +53,26 @@ export default function JisooCalendar() {
           }}
         />
       </JisooCalendarWrapper>
-    </>
+    </JisooCalendarContainer>
   );
 }
+
+const JisooCalendarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Modal = styled.aside`
+  position: absolute;
+
+  width: 50rem;
+  height: 40rem;
+
+  border: 1px solid ${({ theme }) => theme.colors.black};
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.gray1};
+`;
 
 const Box = styled.button<{ $color: string }>`
   display: flex;

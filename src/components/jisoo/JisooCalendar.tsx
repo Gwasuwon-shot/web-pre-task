@@ -15,12 +15,16 @@ export default function JisooCalendar() {
     setOpenModal(!openModal);
   }
 
+  console.log(openModal);
+
   return (
     <JisooCalendarContainer>
-      <Modal>
-        <h1>{value.toISOString().substr(0, 10)}</h1>
-        <p>X</p>
-      </Modal>
+      {openModal && (
+        <Modal>
+          <h1>{value.toISOString().substr(0, 10)}</h1>
+          <p onClick={handleOpenNCloseModal}>X</p>
+        </Modal>
+      )}
       <JisooCalendarWrapper onClick={handleOpenNCloseModal}>
         <Calendar
           onChange={onChange}
@@ -48,7 +52,6 @@ export default function JisooCalendar() {
                   ),
               );
             }
-            console.log(html);
             return <>{html}</>;
           }}
         />

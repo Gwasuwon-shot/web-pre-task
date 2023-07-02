@@ -11,21 +11,23 @@ export default function JisooCalendar() {
   const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
-  function handleOpenNCloseModal() {
-    setOpenModal(!openModal);
+  function handleOpenModal() {
+    setOpenModal(true);
   }
 
-  console.log(openModal);
+  function handleCloseModal() {
+    setOpenModal(false);
+  }
 
   return (
     <JisooCalendarContainer>
       {openModal && (
         <Modal>
           <h1>{value.toISOString().substr(0, 10)}</h1>
-          <p onClick={handleOpenNCloseModal}>X</p>
+          <XButton onClick={handleCloseModal}>X</XButton>
         </Modal>
       )}
-      <JisooCalendarWrapper onClick={handleOpenNCloseModal}>
+      <JisooCalendarWrapper onClick={handleOpenModal}>
         <Calendar
           onChange={onChange}
           // useState로 포커스 변경 시 현재 날짜 받아오기
@@ -60,6 +62,12 @@ export default function JisooCalendar() {
   );
 }
 
+const XButton = styled.p`
+  ${({ theme }) => theme.fonts.caption_large};
+
+  cursor: pointer;
+`;
+
 const JisooCalendarContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -67,6 +75,8 @@ const JisooCalendarContainer = styled.div`
 `;
 
 const Modal = styled.aside`
+  display: flex;
+
   position: absolute;
 
   width: 50rem;

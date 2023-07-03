@@ -9,7 +9,7 @@ import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 
 export default function JisooCalendar() {
   const [value, onChange] = useState(new Date());
-  const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
+  const [classData, setClassData] = useState<any[]>(CAELENDAR_DATA);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [startTimeValue, setStartTimeValue] = useState("10:00 AM");
   const [endTimeValue, setEndTimeValue] = useState("11:00 AM");
@@ -44,21 +44,28 @@ export default function JisooCalendar() {
 
   function handleSaveTimes() {
     handleCloseModal();
-    // setClassData(studentName)
-    // setClassData(
-    //   classData.map(({student, time, dates})=>(student===studentName?))
-    // )
-    // id: number;
-    // student: string;
-    // time: string;
-    // dates: string[];
-    // color: string;
+    const newTimeData = startTimeValue.split(" ")[0] + "~" + endTimeValue.split(" ")[0];
+    const originTimeDatas = classData
+      .map(({ student, times }) => student === studentName && times)
+      .filter((time) => time !== false)[0];
 
-    // setSelectedCategorys(
-    //   selectedCategorys.map((selectCateg) =>
-    //     selectCateg.categId === id ? { ...selectCateg, selected: !selectCateg.selected } : selectCateg,
-    //   ),
-    // );
+    setClassData(
+      classData.map(({ id, student, times, color }) =>
+        student === studentName
+          ? {
+              id: id,
+              student: student,
+              times: [...originTimeDatas, { dates: value.toISOString().substr(0, 10), time: newTimeData }],
+              color: color,
+            }
+          : {
+              id: id,
+              student: student,
+              times: times,
+              color: color,
+            },
+      ),
+    );
   }
 
   return (
@@ -113,10 +120,10 @@ export default function JisooCalendar() {
             {
               classData.map(({ id, student, times, color }: calendarDatatTypes) => {
                 times.map(
-                  ({ dateId, dates, time }) =>
+                  ({ dates, time }) =>
                     dates === moment(date).format("YYYY-MM-DD") &&
                     html.push(
-                      <Box key={dateId} $color={color}>
+                      <Box key={id} $color={color}>
                         <p>{student}</p>
                         <p>{time}</p>
                       </Box>,

@@ -6,7 +6,6 @@ export interface calendarDatatTypes {
 }
 
 export interface timeDataTypes {
-  dateId: number;
   dates: string;
   time: string;
 }

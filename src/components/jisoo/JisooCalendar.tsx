@@ -34,14 +34,16 @@ export default function JisooCalendar() {
     <JisooCalendarContainer>
       {openModal && (
         <Modal>
-          <StartTimePicker>
+          <ModalTitleWrapper>
+            <ModalTitle>{value.toISOString().substr(0, 10)}</ModalTitle>
+            <XButton onClick={handleCloseModal}>X</XButton>
+          </ModalTitleWrapper>
+          <TimePickerWrapper>
+            <p>시작</p>
             <TimePicker onChange={handleChangeStartTimeValue} value={startTimeValue} use12Hours />
-          </StartTimePicker>
-          <EndTimePicker>
+            <p>종료</p>
             <TimePicker onChange={handleChangeEndTimeValue} value={endTimeValue} use12Hours />
-          </EndTimePicker>
-          <ModalTitle>{value.toISOString().substr(0, 10)}</ModalTitle>
-          <XButton onClick={handleCloseModal}>X</XButton>
+          </TimePickerWrapper>
         </Modal>
       )}
       <JisooCalendarWrapper onClick={handleOpenModal}>
@@ -96,7 +98,9 @@ const JisooCalendarContainer = styled.div`
 
 const Modal = styled.aside`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: space-between;
+  /* justify-content: space-between; */
 
   position: absolute;
 
@@ -178,6 +182,15 @@ const JisooCalendarWrapper = styled.div`
   }
 `;
 
-const StartTimePicker = styled.article``;
+const TimePickerWrapper = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-const EndTimePicker = styled.article``;
+  margin-top: 3rem;
+`;
+
+const ModalTitleWrapper = styled.header`
+  display: flex;
+  justify-content: space-between;
+`;

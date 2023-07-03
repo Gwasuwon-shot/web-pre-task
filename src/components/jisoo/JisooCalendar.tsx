@@ -9,18 +9,20 @@ import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 
 export default function JisooCalendar() {
   const [value, onChange] = useState(new Date());
-  const [classData, setClassData] = useState<any[]>(CAELENDAR_DATA);
+  const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [startTimeValue, setStartTimeValue] = useState("10:00 AM");
   const [endTimeValue, setEndTimeValue] = useState("11:00 AM");
   const [studentName, setStudentName] = useState("");
 
-  function handleChangeStartTimeValue(timeValue: any) {
+  function handleChangeStartTimeValue(timeValue: string) {
     setStartTimeValue(timeValue);
   }
 
-  function handleChangeEndTimeValue(timeValue: any) {
+  function handleChangeEndTimeValue(timeValue: string) {
     setEndTimeValue(timeValue);
+
+    console.log(typeof timeValue);
   }
 
   function handleOpenModal() {
@@ -38,7 +40,7 @@ export default function JisooCalendar() {
     return hour === "AM" ? "오전 " + realTime : "오후 " + realTime;
   }
 
-  function handleInputStudentName(e: any) {
+  function handleInputStudentName(e: React.ChangeEvent<HTMLInputElement>) {
     setStudentName(e.target.value);
   }
 
@@ -109,7 +111,7 @@ export default function JisooCalendar() {
           maxDetail="month"
           showNeighboringMonth={false}
           tileContent={({ date, view }) => {
-            let html: any[] = [];
+            let html: HTMLElement[] = [];
             {
               classData.map(({ id, student, times, color }: calendarDatatTypes) => {
                 times.map(

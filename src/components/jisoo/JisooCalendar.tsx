@@ -10,7 +10,7 @@ import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 export default function JisooCalendar() {
   const [value, onChange] = useState<Date>(new Date());
   const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
-  const [openModal, setOpenModal] = useState<boolean>(true);
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const [startTimeValue, setStartTimeValue] = useState("10:00 AM");
   const [endTimeValue, setEndTimeValue] = useState("11:00 AM");
 
@@ -30,6 +30,16 @@ export default function JisooCalendar() {
     setOpenModal(false);
   }
 
+  console.log("startTimeValue" + startTimeValue.split(" ")[1]);
+  console.log("endTimeValue" + endTimeValue);
+
+  function checkTimeValue(time: string) {
+    const hour = time.split(" ")[1];
+    const realTime = time.split(" ")[0];
+
+    return hour === "AM" ? "오전 " + realTime : "오후 " + realTime;
+  }
+
   return (
     <JisooCalendarContainer>
       {openModal && (
@@ -39,10 +49,16 @@ export default function JisooCalendar() {
             <XButton onClick={handleCloseModal}>X</XButton>
           </ModalTitleWrapper>
           <TimePickerWrapper>
-            <p>시작</p>
-            <TimePicker onChange={handleChangeStartTimeValue} value={startTimeValue} use12Hours />
-            <p>종료</p>
-            <TimePicker onChange={handleChangeEndTimeValue} value={endTimeValue} use12Hours />
+            <li>
+              <p>시작</p>
+              <TimePicker onChange={handleChangeStartTimeValue} value={startTimeValue} use12Hours />
+              <RealTimeBox>{checkTimeValue(startTimeValue)}</RealTimeBox>
+            </li>
+            <li>
+              <p>종료</p>
+              <TimePicker onChange={handleChangeEndTimeValue} value={endTimeValue} use12Hours />
+              <RealTimeBox>{checkTimeValue(endTimeValue)}</RealTimeBox>
+            </li>
           </TimePickerWrapper>
         </Modal>
       )}
@@ -182,15 +198,24 @@ const JisooCalendarWrapper = styled.div`
   }
 `;
 
-const TimePickerWrapper = styled.section`
+const TimePickerWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  width: 30rem;
   margin-top: 3rem;
 `;
 
 const ModalTitleWrapper = styled.header`
   display: flex;
   justify-content: space-between;
+`;
+
+const RealTimeBox = styled.div`
+  position: absolute;
+
+  ${({ theme }) => theme.fonts.body1};
+
+  z-index: 0;
 `;

@@ -1,3 +1,7 @@
+.react-ios-time-picker-popup {
+  z-index: 0 !important;
+}
+
 .react-ios-time-picker-btn-container {
   background-color: rgba(0, 0, 0, 0) !important;
   border-bottom: 0px solid #333 !important;
@@ -42,4 +46,14 @@
 .react-ios-time-picker-cell-inner-hour-format:hover {
   background-color: rgba(0, 0, 0, 0) !important;
   color: #6a6a6b !important;
+}
+
+.react-ios-time-picker-input {
+  /* visibility: hidden; */
+  border: 0px solid #0005 !important;
+  color: transparent !important;
+
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
 }

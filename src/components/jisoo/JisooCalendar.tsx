@@ -50,20 +50,13 @@ export default function JisooCalendar() {
       .filter((time) => time !== false)[0];
 
     setClassData(
-      classData.map(({ id, student, times, color }) =>
-        student === studentName
+      classData.map((data) =>
+        data.student === studentName
           ? {
-              id: id,
-              student: student,
+              ...data,
               times: [...originTimeDatas, { dates: moment(value).format("YYYY-MM-DD"), time: newTimeData }],
-              color: color,
             }
-          : {
-              id: id,
-              student: student,
-              times: times,
-              color: color,
-            },
+          : data,
       ),
     );
   }

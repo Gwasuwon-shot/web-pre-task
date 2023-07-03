@@ -8,7 +8,7 @@ import { CAELENDAR_DATA } from "../../core/jisoo/calendarData";
 import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 
 export default function JisooCalendar() {
-  const [value, onChange] = useState<Date>(new Date());
+  const [value, onChange] = useState(new Date());
   const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [startTimeValue, setStartTimeValue] = useState("10:00 AM");
@@ -48,12 +48,24 @@ export default function JisooCalendar() {
           <TimePickerWrapper>
             <li>
               <p>시작</p>
-              <TimePicker onChange={handleChangeStartTimeValue} value={startTimeValue} use12Hours />
+              <TimePicker
+                onChange={handleChangeStartTimeValue}
+                value={startTimeValue}
+                cancelButtonText="취소"
+                saveButtonText="확인"
+                use12Hours
+              />
               <RealTimeBox>{checkTimeValue(startTimeValue)}</RealTimeBox>
             </li>
             <li>
               <p>종료</p>
-              <TimePicker onChange={handleChangeEndTimeValue} value={endTimeValue} use12Hours />
+              <TimePicker
+                onChange={handleChangeEndTimeValue}
+                value={endTimeValue}
+                cancelButtonText="취소"
+                saveButtonText="확인"
+                use12Hours
+              />
               <RealTimeBox>{checkTimeValue(endTimeValue)}</RealTimeBox>
             </li>
           </TimePickerWrapper>

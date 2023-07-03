@@ -13,7 +13,6 @@ const WeekWrapper = styled.section`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  gap: 3.2rem;
   font-weight: 400;
   margin-top: 1.8rem;
 `;
@@ -23,4 +22,5 @@ const DayWrapper = styled.span`
   justify-content: center;
   align-items: center;
   height: auto;
+  width: 6rem;
 `;

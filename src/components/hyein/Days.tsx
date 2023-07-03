@@ -2,15 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { format, endOfMonth, endOfWeek, startOfMonth, startOfWeek, addDays, isSameDay, isSunday } from "date-fns";
 
-export default function Days({ currentMonth, selectedDate, onClickDate }) {
+interface DaysProps {
+  currentMonth: Date;
+  selectedDate: Date;
+  onClickDate: (date: Date) => void;
+}
+
+export default function Days({ currentMonth, selectedDate, onClickDate }: DaysProps) {
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
-  const endDate = endOfWeek(monthEnd);
+  const endDate: Date = endOfWeek(monthEnd);
 
-  const rows = [];
-  let days = [];
-  let day = startDate;
+  const rows: React.ReactNode[] = [];
+  let days: React.ReactNode[] = [];
+  let day: Date = startDate;
   let formattedDate = "";
 
   while (day <= endDate) {
@@ -20,16 +26,16 @@ export default function Days({ currentMonth, selectedDate, onClickDate }) {
       const sunDay = isSunday(day);
       days.push(
         <Day
-          key={day}
-          onClick={() => onClickDate(parse(cloneDay))}
-          issameday={isSameDay(day, selectedDate)}
-          issunday={sunDay}>
-          <DayText isnotvalid={format(currentMonth, "M") !== format(day, "M")}>{formattedDate}</DayText>
+          key={day.toString()}
+          onClick={() => onClickDate(cloneDay)}
+          $issameday={isSameDay(day, selectedDate)}
+          $issunday={sunDay}>
+          <DayText $isnotvalid={format(currentMonth, "M") !== format(day, "M")}>{formattedDate}</DayText>
         </Day>,
       );
       day = addDays(day, 1);
     }
-    rows.push(<DaysWrapper key={day}>{days}</DaysWrapper>);
+    rows.push(<DaysWrapper key={day.toString()}>{days}</DaysWrapper>);
     days = [];
   }
 
@@ -54,7 +60,12 @@ const DaysWrapper = styled.article`
   cursor: pointer;
 `;
 
-const Day = styled.article`
+interface DayProps {
+  $issameday: boolean;
+  $issunday: boolean;
+}
+
+const Day = styled.article<DayProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,14 +73,18 @@ const Day = styled.article`
   width: 1.6rem;
   height: 1.6rem;
 
-  ${({ issameday, issunday }) => `
-    ${issameday ? "color: white; background-color: #0DA98E;  border-radius: 50% " : ""}    
-    ${issunday ? "color: #FCB3A6" : ""}
+  ${({ $issameday, $issunday }) => `
+    ${$issameday ? "color: white; background-color: #0DA98E;  border-radius: 50% " : ""}    
+    ${$issunday ? "color: #FCB3A6" : undefined}
   `}
 `;
 
-const DayText = styled.p`
-  ${({ isnotvalid }) => `
-    ${isnotvalid ? "color: #CED4DA" : ""}
+interface DayTextProp {
+  $isnotvalid: boolean;
+}
+
+const DayText = styled.p<DayTextProp>`
+  ${({ $isnotvalid }) => `
+    ${$isnotvalid ? "color: #CED4DA" : ""}
   `}
 `;

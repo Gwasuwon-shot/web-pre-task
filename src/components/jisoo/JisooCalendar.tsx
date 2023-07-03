@@ -10,7 +10,7 @@ import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
 export default function JisooCalendar() {
   const [value, onChange] = useState<Date>(new Date());
   const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
-  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [openModal, setOpenModal] = useState<boolean>(true);
   const [timeValue, setTimeValue] = useState("10:00 AM");
 
   function handleChangeTimeValue(timeValue: any) {

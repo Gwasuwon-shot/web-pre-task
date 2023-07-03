@@ -1,0 +1,45 @@
+.react-ios-time-picker-btn-container {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-bottom: 0px solid #333 !important;
+}
+
+.react-ios-time-picker-btn-cancel {
+  color: #000000 !important;
+}
+
+.react-ios-time-picker-btn {
+  color: #0da98f !important;
+}
+
+.react-ios-time-picker {
+  margin-bottom: 12rem !important;
+  box-shadow: 0 0px 0px #0005 !important;
+}
+
+.react-ios-time-picker-container {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.react-ios-time-picker-selected-overlay {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.react-ios-time-picker-hour-format {
+  position: absolute !important;
+  margin-right: 105px;
+  z-index: 101 !important;
+}
+
+.react-ios-time-picker-cell-inner-hour-format-selected,
+.react-ios-time-picker-cell-inner-selected,
+.react-ios-time-picker-colon {
+  color: #000000 !important;
+}
+
+/* 호버 효과 없애기 */
+.react-ios-time-picker-cell-inner-hour:hover,
+.react-ios-time-picker-cell-inner-minute:hover,
+.react-ios-time-picker-cell-inner-hour-format:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: #6a6a6b !important;
+}

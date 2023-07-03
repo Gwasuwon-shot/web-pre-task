@@ -30,9 +30,6 @@ export default function JisooCalendar() {
     setOpenModal(false);
   }
 
-  console.log("startTimeValue" + startTimeValue.split(" ")[1]);
-  console.log("endTimeValue" + endTimeValue);
-
   function checkTimeValue(time: string) {
     const hour = time.split(" ")[1];
     const realTime = time.split(" ")[0];

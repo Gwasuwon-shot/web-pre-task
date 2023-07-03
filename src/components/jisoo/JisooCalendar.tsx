@@ -111,7 +111,7 @@ export default function JisooCalendar() {
           maxDetail="month"
           showNeighboringMonth={false}
           tileContent={({ date, view }) => {
-            let html: HTMLElement[] = [];
+            let html: Element[] = [];
             {
               classData.map(({ id, student, times, color }: calendarDatatTypes) => {
                 times.map(

@@ -45,8 +45,22 @@ export default function JisooCalendar() {
   function handleSaveTimes() {
     handleCloseModal();
     // setClassData(studentName)
-  }
+    // setClassData(
+    //   classData.map(({student, time, dates})=>(student===studentName?))
+    // )
+    // id: number;
+    // student: string;
+    // time: string;
+    // dates: string[];
+    // color: string;
 
+    // setSelectedCategorys(
+    //   selectedCategorys.map((selectCateg) =>
+    //     selectCateg.categId === id ? { ...selectCateg, selected: !selectCateg.selected } : selectCateg,
+    //   ),
+    // );
+  }
+  console.log(classData);
   return (
     <JisooCalendarContainer>
       {openModal && (
@@ -101,8 +115,11 @@ export default function JisooCalendar() {
             // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
             {
               classData.map(
-                ({ id, student, time, dates, color }: calendarDatatTypes) =>
-                  dates.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
+                ({ id, student, time, color }: calendarDatatTypes) =>
+                {time.map(({dateId, dates, time})=>(
+                  
+                ))}
+                  time.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
                   html.push(
                     <Box key={id} $color={color}>
                       <p>{student}</p>

@@ -17,20 +17,20 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      // window.onload = function () {
-      //   document.querySelector(".react-ios-time-picker-cell-inner-hour-format-selected").innerHTML = "오전";
-      //   const sections = document.querySelectorAll(".react-ios-time-picker-cell-inner-hour-format");
+      window.onload = function () {
+        document.querySelector(".react-ios-time-picker-cell-inner-hour-format-selected").innerHTML = "오전";
+        const sections = document.querySelectorAll(".react-ios-time-picker-cell-inner-hour-format");
 
-      //   console.log(sections);
-      //   console.log(sections.length);
-      //   for (let i = 0; i < sections.length; i++) {
-      //     if (i === 0) {
-      //       let item = sections.item(i);
+        console.log(sections);
+        console.log(sections.length);
+        for (let i = 0; i < sections.length; i++) {
+          if (i === 0) {
+            let item = sections.item(i);
 
-      //       item.innerHTML = "오전";
-      //     }
-      //   }
-      // };
+            item.innerHTML = "오전";
+          }
+        }
+      };
     </script>
   </body>
 </html>

@@ -69,6 +69,7 @@ export default function JisooCalendar() {
               <RealTimeBox>{checkTimeValue(endTimeValue)}</RealTimeBox>
             </li>
           </TimePickerWrapper>
+          <button type="button">확인</button>
         </Modal>
       )}
       <JisooCalendarWrapper onClick={handleOpenModal}>

@@ -165,7 +165,7 @@ const Modal = styled.aside`
   position: absolute;
 
   width: 50rem;
-  height: 40rem;
+  height: 50rem;
   padding: 3rem;
 
   border: 1px solid ${({ theme }) => theme.colors.black};
@@ -224,6 +224,7 @@ const JisooCalendarWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border: 0.5px solid black;
   }
   /*hover, focus, 선택됐을 시 */
   .react-calendar__tile:enabled:hover,
@@ -239,6 +240,11 @@ const JisooCalendarWrapper = styled.div`
   .react-calendar__tile--now {
     background: ${({ theme }) => theme.colors.sub1};
     border-radius: 10px;
+  }
+  /* 1년 앞뒤 버튼 */
+  .react-calendar__navigation__prev2-button,
+  .react-calendar__navigation__next2-button {
+    display: none;
   }
 `;
 
@@ -266,7 +272,7 @@ const RealTimeBox = styled.div`
 
 const TimeResultButtom = styled.button`
   padding: 1rem;
-  margin-top: 23rem;
+  margin-top: 35rem;
 
   border: 1px solid black;
 

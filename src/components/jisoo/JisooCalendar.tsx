@@ -11,10 +11,15 @@ export default function JisooCalendar() {
   const [value, onChange] = useState<Date>(new Date());
   const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
   const [openModal, setOpenModal] = useState<boolean>(true);
-  const [timeValue, setTimeValue] = useState("10:00 AM");
+  const [startTimeValue, setStartTimeValue] = useState("10:00 AM");
+  const [endTimeValue, setEndTimeValue] = useState("11:00 AM");
 
-  function handleChangeTimeValue(timeValue: any) {
-    setTimeValue(timeValue);
+  function handleChangeStartTimeValue(timeValue: any) {
+    setStartTimeValue(timeValue);
+  }
+
+  function handleChangeEndTimeValue(timeValue: any) {
+    setEndTimeValue(timeValue);
   }
 
   function handleOpenModal() {
@@ -29,7 +34,12 @@ export default function JisooCalendar() {
     <JisooCalendarContainer>
       {openModal && (
         <Modal>
-          <TimePicker onChange={handleChangeTimeValue} value={timeValue} use12Hours />
+          <StartTimePicker>
+            <TimePicker onChange={handleChangeStartTimeValue} value={startTimeValue} use12Hours />
+          </StartTimePicker>
+          <EndTimePicker>
+            <TimePicker onChange={handleChangeEndTimeValue} value={endTimeValue} use12Hours />
+          </EndTimePicker>
           <ModalTitle>{value.toISOString().substr(0, 10)}</ModalTitle>
           <XButton onClick={handleCloseModal}>X</XButton>
         </Modal>
@@ -167,3 +177,7 @@ const JisooCalendarWrapper = styled.div`
     border-radius: 10px;
   }
 `;
+
+const StartTimePicker = styled.article``;
+
+const EndTimePicker = styled.article``;

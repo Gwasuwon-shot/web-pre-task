@@ -1,10 +1,5 @@
-import { ReactIc } from "../assets";
+import JisooCalendar from "../components/jisoo/JisooCalendar";
 
 export default function Jisoo() {
-  return (
-    <>
-      <ReactIc />
-      <div>Jisoo</div>
-    </>
-  );
+  return <JisooCalendar />;
 }

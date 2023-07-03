@@ -60,7 +60,7 @@ export default function JisooCalendar() {
     //   ),
     // );
   }
-  console.log(classData);
+
   return (
     <JisooCalendarContainer>
       {openModal && (
@@ -105,51 +105,26 @@ export default function JisooCalendar() {
           // useState로 포커스 변경 시 현재 날짜 받아오기
           formatDay={(locale, date) => moment(date).format("DD")} // 날'일' 제외하고 숫자만 보이도록 설정
           value={value}
-          minDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
-          maxDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
-          showNeighboringMonth={false} //  이전, 이후 달의 날짜는 보이지 않도록 설정
+          minDetail="month"
+          maxDetail="month"
+          showNeighboringMonth={false}
           tileContent={({ date, view }) => {
-            console.log(moment(date).format("YYYY-MM-DD"));
-            // 날짜 타일에 컨텐츠 추가하기 (html 태그)
-            // 추가할 html 태그를 변수 초기화
             let html: any[] = [];
-            // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
             {
-              classData.map(
-                ({ id, student, times, color }: calendarDatatTypes) => {
-                  times.map(
-                    ({ dateId, dates, time }) =>
-                      dates === moment(date).format("YYYY-MM-DD") &&
-                      html.push(
-                        <Box key={dateId} $color={color}>
-                          <p>{student}</p>
-                          <p>{time}</p>
-                        </Box>,
-                      ),
-                  );
-                },
-                // times.find((x) => x === moment(date).format("YYYY-MM-DD")) &&
-                // // (dates =
-                // //   moment(date).format("YYYY-MM-DD") &&
-                // html.push(
-                //   <Box key={dateId} $color={color}>
-                //     <p>{student}</p>
-                //     <p>{time}</p>
-                //   </Box>,
-                // ),
-              );
+              classData.map(({ id, student, times, color }: calendarDatatTypes) => {
+                times.map(
+                  ({ dateId, dates, time }) =>
+                    dates === moment(date).format("YYYY-MM-DD") &&
+                    html.push(
+                      <Box key={dateId} $color={color}>
+                        <p>{student}</p>
+                        <p>{time}</p>
+                      </Box>,
+                    ),
+                );
+              });
             }
 
-            // let html = [];
-            // // 현재 날짜가 post 작성한 날짜 배열(mark)에 있다면, dot div 추가
-            // if (classData.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
-            //       html.push(
-            //         <Box key={dateId} $color={color}>
-            //           <p>{student}</p>
-            //           <p>{time}</p>
-            //         </Box>,
-            //       ),
-            // }
             return <>{html}</>;
           }}
         />

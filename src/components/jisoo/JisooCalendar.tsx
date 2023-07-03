@@ -13,6 +13,7 @@ export default function JisooCalendar() {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [startTimeValue, setStartTimeValue] = useState("10:00 AM");
   const [endTimeValue, setEndTimeValue] = useState("11:00 AM");
+  const [studentName, setStudentName] = useState("");
 
   function handleChangeStartTimeValue(timeValue: any) {
     setStartTimeValue(timeValue);
@@ -35,6 +36,15 @@ export default function JisooCalendar() {
     const realTime = time.split(" ")[0];
 
     return hour === "AM" ? "오전 " + realTime : "오후 " + realTime;
+  }
+
+  function handleInputStudentName(e: any) {
+    setStudentName(e.target.value);
+  }
+
+  function handleSaveTimes() {
+    handleCloseModal();
+    // setClassData(studentName)
   }
 
   return (
@@ -69,7 +79,10 @@ export default function JisooCalendar() {
               <RealTimeBox>{checkTimeValue(endTimeValue)}</RealTimeBox>
             </li>
           </TimePickerWrapper>
-          <button type="button">확인</button>
+          <StudentNameInput type="text" placeholder="학생이름" onChange={handleInputStudentName} />
+          <TimeResultButtom type="button" onClick={handleSaveTimes}>
+            저장
+          </TimeResultButtom>
         </Modal>
       )}
       <JisooCalendarWrapper onClick={handleOpenModal}>
@@ -228,4 +241,19 @@ const RealTimeBox = styled.div`
   ${({ theme }) => theme.fonts.body1};
 
   z-index: 0;
+`;
+
+const TimeResultButtom = styled.button`
+  padding: 1rem;
+  margin-top: 23rem;
+
+  border: 1px solid black;
+
+  cursor: pointer;
+`;
+
+const StudentNameInput = styled.input`
+  margin-top: -4.5rem;
+
+  border: 1px solid black;
 `;

@@ -2,6 +2,7 @@ import moment from "moment";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { TimePicker } from "react-ios-time-picker";
 import { styled } from "styled-components";
 import { CAELENDAR_DATA } from "../../core/jisoo/calendarData";
 import { calendarDatatTypes } from "../../type/jisoo/calendarDataTypes";
@@ -10,6 +11,11 @@ export default function JisooCalendar() {
   const [value, onChange] = useState<Date>(new Date());
   const [classData, setClassData] = useState<calendarDatatTypes[]>(CAELENDAR_DATA);
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [timeValue, setTimeValue] = useState("10:00 AM");
+
+  function handleChangeTimeValue(timeValue: any) {
+    setTimeValue(timeValue);
+  }
 
   function handleOpenModal() {
     setOpenModal(true);
@@ -23,6 +29,7 @@ export default function JisooCalendar() {
     <JisooCalendarContainer>
       {openModal && (
         <Modal>
+          <TimePicker onChange={handleChangeTimeValue} value={timeValue} use12Hours />
           <ModalTitle>{value.toISOString().substr(0, 10)}</ModalTitle>
           <XButton onClick={handleCloseModal}>X</XButton>
         </Modal>
@@ -36,7 +43,6 @@ export default function JisooCalendar() {
           minDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
           maxDetail="month" // 상단 네비게이션에서 '월' 단위만 보이게 설정
           showNeighboringMonth={false} //  이전, 이후 달의 날짜는 보이지 않도록 설정
-          className="mx-auto w-full text-sm border-b"
           tileContent={({ date, view }) => {
             // 날짜 타일에 컨텐츠 추가하기 (html 태그)
             // 추가할 html 태그를 변수 초기화

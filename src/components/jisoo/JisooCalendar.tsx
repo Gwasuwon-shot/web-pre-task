@@ -55,7 +55,7 @@ export default function JisooCalendar() {
           ? {
               id: id,
               student: student,
-              times: [...originTimeDatas, { dates: value.toISOString().substr(0, 10), time: newTimeData }],
+              times: [...originTimeDatas, { dates: moment(value).format("YYYY-MM-DD"), time: newTimeData }],
               color: color,
             }
           : {
@@ -73,7 +73,7 @@ export default function JisooCalendar() {
       {openModal && (
         <Modal>
           <ModalTitleWrapper>
-            <ModalTitle>{value.toISOString().substr(0, 10)}</ModalTitle>
+            <ModalTitle>{moment(value).format("YYYY-MM-DD")}</ModalTitle>
             <XButton onClick={handleCloseModal}>X</XButton>
           </ModalTitleWrapper>
           <TimePickerWrapper>

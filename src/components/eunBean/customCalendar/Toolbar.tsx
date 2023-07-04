@@ -9,6 +9,7 @@ export default function Toolbar(props) {
 
   return (
     <div className="rbc-toolbar">
+      <div> 이미지 </div>
       <span className="rbc-toolbar-label">{`${date.getFullYear()}년 ${date.getMonth() + 1}월`}</span>
     </div>
   );

@@ -61,11 +61,6 @@ export default function BeanCalendar() {
     },
   };
 
-  // 날짜 풀네임
-  const formats = {
-    weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
-  };
-
   // 일요일 빨간색
   const dayPropGetter = (date) => {
     const dayOfWeek = date.getDay();
@@ -84,7 +79,6 @@ export default function BeanCalendar() {
       <CalendarWrapper>
         <Calendar
           localizer={localizer}
-          formats={formats}
           style={{ height: 500, width: 500 }}
           events={EVENT_LIST}
           startAccessor="start"

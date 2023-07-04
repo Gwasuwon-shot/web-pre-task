@@ -1,32 +1,50 @@
-export const EVENTS = [
+// 이벤트 리스트
+export const EVENT_LIST = [
+  {
+    id: 0,
+    title: "은빈",
+    start: new Date(2023, 6, 1, 7, 0), // 시작 시간 (년, 월(0부터 시작), 일, 시간, 분)
+    end: new Date(2023, 6, 1, 8, 0), // 종료 시간 (년, 월(0부터 시작), 일, 시간, 분
+
+    // 각 컬러 지정을 위한 type 지정
+    data: {
+      type: "비니",
+    },
+  },
   {
     id: 1,
-    student: "지수",
-    time: "13:00 ~ 14:00",
-    date: ["2023.11.06", "2023.11.13", "2023.11.20", "2023.11.27"],
+    title: "2 은빈",
+    start: new Date(2023, 6, 3, 8, 0),
+    end: new Date(2023, 6, 3, 9, 0),
+    data: {
+      type: "비니",
+    },
   },
   {
     id: 2,
-    student: "희정",
-    time: "19:00 ~ 20:00",
-    date: ["2023.11.06", "2023.11.16"],
+    title: "3 은빈",
+    start: new Date(2023, 6, 9, 9, 0),
+    end: new Date(2023, 6, 9, 10, 0),
+    data: {
+      type: "비니",
+    },
   },
   {
     id: 3,
-    student: "은빈",
-    time: "18:00 ~ 19:00",
-    date: ["2023.11.09"],
+    title: "",
+    start: new Date(2023, 6, 1, 12, 0),
+    end: new Date(2023, 6, 1, 14, 0),
+    data: {
+      type: "비니",
+    },
   },
   {
     id: 4,
-    student: "성경",
-    time: "11:00 ~ 12:00",
-    date: ["2023.11.22"],
-  },
-  {
-    id: 5,
-    student: "혜인",
-    time: "15:00 ~ 16:00",
-    date: ["2023.11.30"],
+    title: "희정",
+    start: new Date(2023, 6, 16, 16, 0),
+    end: new Date(2023, 6, 16, 24, 0),
+    data: {
+      type: "히정",
+    },
   },
 ];

@@ -29,10 +29,10 @@ export default function BeanCalendar() {
     },
   };
 
-  // // 날짜 한글로
-  // const formats = {
-  //   weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
-  // };
+  // 날짜 풀네임
+  const formats = {
+    weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
+  };
 
   return (
     <>
@@ -40,7 +40,7 @@ export default function BeanCalendar() {
       <CalendarWrapper>
         <Calendar
           localizer={localizer}
-          // formats={formats}
+          formats={formats}
           style={{ height: 500, width: 500 }}
           events={EVENT_LIST}
           startAccessor="start"

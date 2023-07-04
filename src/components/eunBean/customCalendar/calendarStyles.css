@@ -83,21 +83,22 @@ button.rbc-input::-moz-focus-inner {
   flex: 1 0 0%;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 3px;
+  padding: 0.5rem 3px;
   text-align: center;
   vertical-align: middle;
   font-weight: bold;
   font-size: 90%;
   min-height: 0;
+  background-color: #fbfcfd;
   border-bottom: 1px solid #ddd;
 }
-.rbc-header + .rbc-header {
+/* .rbc-header + .rbc-header {
   border-left: 1px solid #ddd;
 }
 .rbc-rtl .rbc-header + .rbc-header {
   border-left-width: 0;
   border-right: 1px solid #ddd;
-}
+} */
 .rbc-header > a,
 .rbc-header > a:active,
 .rbc-header > a:visited {
@@ -347,7 +348,7 @@ button.rbc-input::-moz-focus-inner {
 
 .rbc-month-view {
   position: relative;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,13 +435,13 @@ button.rbc-input::-moz-focus-inner {
   -ms-flex: 1 0 0%;
   flex: 1 0 0%;
 }
-.rbc-day-bg + .rbc-day-bg {
+/* .rbc-day-bg + .rbc-day-bg {
   border-left: 1px solid #ddd;
 }
 .rbc-rtl .rbc-day-bg + .rbc-day-bg {
   border-left-width: 0;
   border-right: 1px solid #ddd;
-}
+} */
 
 .rbc-overlay {
   position: absolute;

@@ -17,12 +17,44 @@ export default function BeanCalendar() {
   //  일정 등록 => 카테고리 마다 색 구분
   const components = {
     event: (props: any) => {
+      // 시간 만들기
+      const dateString = props.event.start;
+      const dateObject = new Date(dateString);
+      const timeString = dateObject.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+
+      //  색 주기
       const eventType = props?.event?.data?.type;
       switch (eventType) {
-        case "비니":
-          return <div style={{ background: "yellow", color: "black", height: "100%" }}>{props.title}</div>;
-        case "히정":
-          return <div style={{ background: "lightgreen", color: "black", height: "100%" }}>{props.title}</div>;
+        case "토마토":
+          return (
+            <Event style={{ background: "yellow" }}>
+              {props.title} {timeString}
+            </Event>
+          );
+        case "키위":
+          return (
+            <Event style={{ background: "beige" }}>
+              {props.title} {timeString}
+            </Event>
+          );
+        case "바나나":
+          return (
+            <Event style={{ background: "lightgrey" }}>
+              {props.title} {timeString}
+            </Event>
+          );
+        case "체리":
+          return (
+            <Event style={{ background: "lightblue" }}>
+              {props.title} {timeString}
+            </Event>
+          );
+        case "복숭아":
+          return (
+            <Event style={{ background: "lightpink" }}>
+              {props.title} {timeString}
+            </Event>
+          );
         default:
           return null;
       }
@@ -32,6 +64,18 @@ export default function BeanCalendar() {
   // 날짜 풀네임
   const formats = {
     weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
+  };
+
+  // 일요일 빨간색
+  const dayPropGetter = (date) => {
+    const dayOfWeek = date.getDay();
+    console.log(dayOfWeek);
+    const style = {
+      color: dayOfWeek === 0 ? "red" : "inherit",
+    };
+    return {
+      style,
+    };
   };
 
   return (
@@ -49,6 +93,7 @@ export default function BeanCalendar() {
             ...components,
             toolbar: Toolbar,
           }}
+          dayPropGetter={dayPropGetter}
         />
       </CalendarWrapper>
     </>
@@ -65,4 +110,10 @@ const Header = styled.header`
   font-size: 3rem;
   text-align: center;
   margin: 3rem;
+`;
+
+const Event = styled.div`
+  color: black;
+  border-radius: 10px;
+  height: 100%;
 `;

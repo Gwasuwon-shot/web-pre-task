@@ -1,6 +1,6 @@
 import {addMonths, format, subMonths} from 'date-fns';
 
-import {Icon} from '%iconify/react';
+import { Icon } from '@iconify/react';
 import styled from 'styled-components';
 
 export default function Header({currentMonth, prevMonth, nextMonth}) {

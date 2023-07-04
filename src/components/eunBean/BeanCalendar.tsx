@@ -61,18 +61,6 @@ export default function BeanCalendar() {
     },
   };
 
-  // 일요일 빨간색
-  const dayPropGetter = (date) => {
-    const dayOfWeek = date.getDay();
-    console.log(dayOfWeek);
-    const style = {
-      color: dayOfWeek === 0 ? "red" : "inherit",
-    };
-    return {
-      style,
-    };
-  };
-
   return (
     <>
       <Header> 비니 캘린더 </Header>
@@ -87,7 +75,6 @@ export default function BeanCalendar() {
             ...components,
             toolbar: Toolbar,
           }}
-          dayPropGetter={dayPropGetter}
         />
       </CalendarWrapper>
     </>
@@ -108,6 +95,7 @@ const Header = styled.header`
 
 const Event = styled.div`
   color: black;
-  border-radius: 10px;
+  border-radius: 3px;
   height: 100%;
+  padding: 0.2rem;
 `;

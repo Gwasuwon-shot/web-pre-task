@@ -5,11 +5,12 @@ import Day from './Day';
 import Header from './Header';
 import styled from 'styled-components';
 import {useState} from 'react';
+import {SCHEDULE} from '../../core/data';
 
 export default function Calender() {
 
     const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
-    
+
     const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
     const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
 
@@ -24,6 +25,7 @@ export default function Calender() {
             <Day />
             <Body 
                 currentMonth = {currentMonth}
+                schedule = {SCHEDULE}
             />
         </CalenderWrapper>
     );

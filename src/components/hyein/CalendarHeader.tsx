@@ -2,7 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { format, add, subMonths } from "date-fns";
 
-export default function CalendarHeader({ currentMonth, prevMonth, nextMonth }) {
+interface CalendarHeaderProps {
+  currentMonth: Date;
+  prevMonth: Date;
+  nextMonth: Date;
+}
+
+export default function CalendarHeader({ currentMonth, prevMonth, nextMonth }: CalendarHeaderProps) {
   return (
     <HeaderWrapper>
       <PrevMonthButton onClick={prevMonth}>{"<"}</PrevMonthButton>

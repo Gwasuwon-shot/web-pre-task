@@ -27,6 +27,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
     gap: 8rem;
 
     padding: 5rem;
@@ -39,7 +40,8 @@ const TimeWrapper = styled.header`
 
     gap: 1rem;
 
-    font-size: 2rem;
+    font-size: 2.3rem;
+    font-weight: bold;
 
 `
 
@@ -49,5 +51,6 @@ const Year = styled.span`
 
 const Month = styled.span`
     display: flex;
+    
     margin-right: 3rem;
 `

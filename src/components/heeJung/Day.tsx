@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export default function Day() {
     
-    // 요일 생성
     const days = [];
-
     const date = ['일', '월', '화', '수', '목', '금',' 토'];
 
     for (let i = 0; i < 7; i++) {
@@ -26,6 +24,7 @@ const DayWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
     gap: 8rem;
 
     padding: 5rem;
@@ -34,8 +33,12 @@ const DayWrapper = styled.div`
 
 const Week = styled.div`
     display: flex;
+    justify-content: center;
 
-    font-size: 1.5rem;
-
+    width: 10rem;
+    
+    font-size: 2rem;
+    font-weight: bold;
+    
     border: 0.5rem;
 `

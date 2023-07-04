@@ -3,4 +3,5 @@ export interface ScheduleType {
     student: string;
     time: string;
     date: string[];
+    color: string;
 }

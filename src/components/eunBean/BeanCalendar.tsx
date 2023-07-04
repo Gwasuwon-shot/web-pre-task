@@ -1,15 +1,18 @@
 import { styled } from "styled-components";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
+// 한글 넣기
+import "moment/dist/locale/ko";
+
 import "./customCalendar/calendarStyles.css";
 import Toolbar from "./customCalendar/Toolbar";
-import { useState } from "react";
 import { EVENT_LIST } from "./customCalendar/CalendarConstnat";
 
 export default function BeanCalendar() {
+  // locale 한글로 설정
   moment.locale("ko-KR");
+  // localizer 인스턴스 생성
   const localizer = momentLocalizer(moment);
-  const [selectedDate, setSelectedDate] = useState(new Date());
 
   //  일정 등록 => 카테고리 마다 색 구분
   const components = {
@@ -26,15 +29,10 @@ export default function BeanCalendar() {
     },
   };
 
-  // 날짜 한글로
-  const formats = {
-    weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
-  };
-
-  //  날짜 이동
-  const handleNavigate = (date) => {
-    setSelectedDate(date);
-  };
+  // // 날짜 한글로
+  // const formats = {
+  //   weekdayFormat: (date, culture, localizer) => localizer.format(date, "dddd", culture),
+  // };
 
   return (
     <>
@@ -42,13 +40,11 @@ export default function BeanCalendar() {
       <CalendarWrapper>
         <Calendar
           localizer={localizer}
+          // formats={formats}
           style={{ height: 500, width: 500 }}
           events={EVENT_LIST}
           startAccessor="start"
           endAccessor="end"
-          culture={"ko-KR"}
-          onNavigate={handleNavigate}
-          date={selectedDate}
           components={{
             ...components,
             toolbar: Toolbar,

@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 
-export default function Header() {
-
+export default function Body() {
+    
     // 요일 생성
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-    const DayHeader = () => {
+    const BodyHeader = () => {
         return days.map((day, index) => (
             <div key = {index}> {day} </div>
         ));
     };
 
     return (
-        <HeaderWrapper>
-            {DayHeader()}
-        </HeaderWrapper>
+        <BodyWrapper>
+            {BodyHeader()}
+        </BodyWrapper>
     )
 }
 
-const HeaderWrapper = styled.header`
+const BodyWrapper = styled.header`
     display: flex;
     justify-content: space-evenly;
     align-items: center;

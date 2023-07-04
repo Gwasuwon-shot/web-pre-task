@@ -1,17 +1,20 @@
+import Body from './Body';
+import Day from './Day';
 import Header from './Header';
-import { scheduleState } from '../../atom/store';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
+import {useState} from 'react';
 
 export default function Calender() {
-    const schedules = useRecoilValue(scheduleState);
-    
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-    
+    const [currentMonth, setCurrentMonth] = useState(new Date());
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
+
     return (
     <CalenderWrapper>
         <Header />
+        <Body />
+        <Day />
     </CalenderWrapper>
     );
 }

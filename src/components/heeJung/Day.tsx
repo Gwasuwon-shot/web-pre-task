@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export default function Header() {
-
+export default function Day() {
+    
     // 요일 생성
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
@@ -12,13 +12,13 @@ export default function Header() {
     };
 
     return (
-        <HeaderWrapper>
+        <DayWrapper>
             {DayHeader()}
-        </HeaderWrapper>
+        </DayWrapper>
     )
 }
 
-const HeaderWrapper = styled.header`
+const DayWrapper = styled.header`
     display: flex;
     justify-content: space-evenly;
     align-items: center;

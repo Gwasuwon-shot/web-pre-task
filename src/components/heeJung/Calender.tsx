@@ -8,12 +8,16 @@ import {useState} from 'react';
 
 export default function Calender() {
 
-    const [currentMonth, setCurrentMonth] = useState(new Date());
-    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
+    const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
-    const prevMonth = setCurrentMonth(subMonths(currentMonth, 1));
-    const nextMonth = setCurrentMonth(addMonths(currentMonth, 1));
-    
+    const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
+    const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
+
+    const onDateClick = (day: Date) => {
+        setSelectedDate(day);
+    }
+
     return (
         <CalenderWrapper>
             <Header 
@@ -22,7 +26,11 @@ export default function Calender() {
                 nextMonth = {nextMonth}        
             />
             <Day />
-            <Body />
+            <Body 
+                currentMonth = {currentMonth}
+                selectedDate = {selectedDate}
+                onDateClick = {onDateClick}
+            />
         </CalenderWrapper>
     );
 }

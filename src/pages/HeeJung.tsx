@@ -1,3 +1,5 @@
+import Calender from '../components/heeJung/Calender';
+
 export default function HeeJung() {
-  return <div>HeeJung</div>;
+  return <Calender/>;
 }

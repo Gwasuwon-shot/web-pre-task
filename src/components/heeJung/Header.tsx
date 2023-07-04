@@ -1,19 +1,24 @@
+import {addMonths, format, subMonths} from 'date-fns';
+
+import {Icon} from '%iconify/react';
 import styled from 'styled-components';
 
-export default function Header() {
-
-    // 요일 생성
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-    const DayHeader = () => {
-        return days.map((day, index) => (
-            <div key = {index}> {day} </div>
-        ));
-    };
-
+export default function Header({currentMonth, prevMonth, nextMonth}) {
+    
     return (
         <HeaderWrapper>
-            {DayHeader()}
+            <div>
+                <span>
+                    <span>
+                        {format(currentMonth, 'M')} 월
+                    </span>
+                    {format(currentMonth, 'yyyy')}
+                </span>
+            </div>
+            <div>
+                <Icon icon = "bi:arrow-left-circle-fill" onClick = {prevMonth} />
+                <Icon icon = "bi:arrow-right-circle-fill" onClick = {nextMonth} />
+            </div>
         </HeaderWrapper>
     )
 }

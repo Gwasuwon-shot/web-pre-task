@@ -23,7 +23,7 @@ export default function BeanCalendar() {
       const timeString = dateObject.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
 
       //  색 주기
-      const eventType = props?.event?.data?.type;
+      const eventType = props?.event?.type;
       switch (eventType) {
         case "토마토":
           return (

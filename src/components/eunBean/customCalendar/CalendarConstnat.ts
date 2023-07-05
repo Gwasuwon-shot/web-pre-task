@@ -1,3 +1,12 @@
+export interface eventInfo {
+  id: number;
+  title: string;
+  start: Date;
+  end: Date;
+  // data 내부
+  type: string;
+}
+
 // 이벤트 리스트
 export const EVENT_LIST = [
   {
@@ -7,9 +16,7 @@ export const EVENT_LIST = [
     end: new Date(2023, 6, 6, 14, 0), // 종료 시간 (년, 월(0부터 시작), 일, 시간, 분
 
     // 각 컬러 지정을 위한 type 지정
-    data: {
-      type: "복숭아",
-    },
+    type: "복숭아",
   },
   {
     id: 1,

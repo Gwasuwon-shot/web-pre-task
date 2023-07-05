@@ -6,6 +6,7 @@ import "moment/dist/locale/ko";
 
 import "./customCalendar/calendarStyles.css";
 import Toolbar from "./customCalendar/Toolbar";
+import DateHeader from "./customCalendar/DateHeader";
 import { EVENT_LIST } from "./customCalendar/CalendarConstnat";
 
 export default function BeanCalendar() {
@@ -21,9 +22,9 @@ export default function BeanCalendar() {
       const dateString = props.event.start;
       const dateObject = new Date(dateString);
       const timeString = dateObject.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
-
-      //  색 주기
       const eventType = props?.event?.type;
+
+      // 이벤트 색 주기
       switch (eventType) {
         case "토마토":
           return (
@@ -74,6 +75,7 @@ export default function BeanCalendar() {
           components={{
             ...components,
             toolbar: Toolbar,
+            dateHeader: DateHeader,
           }}
         />
       </CalendarWrapper>

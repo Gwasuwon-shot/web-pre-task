@@ -3,7 +3,6 @@ export interface eventInfo {
   title: string;
   start: Date;
   end: Date;
-  // data 내부
   type: string;
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function DateHeader({ date, label }) {
+export default function DateHeader(props) {
+  const { date, label } = props;
   const isSunday = new Date(date).getDay() === 0;
 
   function headerStyle() {

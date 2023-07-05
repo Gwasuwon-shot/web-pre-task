@@ -4,10 +4,10 @@ import moment from "moment";
 // 한글 넣기
 import "moment/dist/locale/ko";
 
-import "./customCalendar/calendarStyles.css";
-import Toolbar from "./customCalendar/Toolbar";
-import DateHeader from "./customCalendar/DateHeader";
-import { EVENT_LIST } from "./customCalendar/CalendarConstnat";
+import "./calendar-style/calendarStyles.css";
+import Toolbar from "./calendar-component/Toolbar";
+import DateHeader from "./calendar-component/DateHeader";
+import { EVENT_LIST } from "./calendar-data/CalendarConstnat";
 
 export default function BeanCalendar() {
   // locale 한글로 설정

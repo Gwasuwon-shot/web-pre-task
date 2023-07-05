@@ -1,3 +1,9 @@
+import Calendar from "../components/eunBean/BeanCalendar";
+
 export default function EunBean() {
-  return <div>EunBean</div>;
+  return (
+    <>
+      <Calendar />
+    </>
+  );
 }

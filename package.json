@@ -19,6 +19,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "firebase": "^9.23.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-calendar": "^4.3.0",
@@ -31,7 +32,9 @@
     "recoil": "^0.7.7",
     "styled-components": "^6.0.0",
     "vite-plugin-svgr": "^3.2.0",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite-tsconfig-paths": "^4.2.0",
+    "workbox-core": "^7.0.0",
+    "workbox-precaching": "^7.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

@@ -16,7 +16,7 @@ type PushMessage = {
 
 const _version = "v2";
 const cacheName = "v2";
-const cacheList = ["Picme", "PWA"];
+const cacheList = ["Tutice", "PWA"];
 const consoleMessage = (message: string) => {
   console.log(`Service Worker ${_version} : ${message}`);
 };

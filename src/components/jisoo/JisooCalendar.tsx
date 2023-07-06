@@ -131,7 +131,6 @@ export default function JisooCalendar() {
           }}
         />
       </JisooCalendarWrapper>
-      <AlarmButton>출석</AlarmButton>
     </JisooCalendarContainer>
   );
 }
@@ -280,12 +279,4 @@ const StudentNameInput = styled.input`
   margin-top: -4.5rem;
 
   border: 1px solid black;
-`;
-
-const AlarmButton = styled.button`
-  width: 30rem;
-  height: 20rem;
-
-  border: 1px solid black;
-  background-color: ${({ theme }) => theme.colors.sub2};
 `;

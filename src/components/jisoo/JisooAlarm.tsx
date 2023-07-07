@@ -97,6 +97,7 @@ export default function JisooAlarm() {
   }, [deviceToken]);
 
   function handleCopyClipBoard(token: string) {
+    console.log(token);
     try {
       navigator.clipboard.writeText(token).then(() => {
         alert("클립보드에 토큰이 복사되었어요.");

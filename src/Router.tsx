@@ -11,7 +11,7 @@ export default function Router() {
       <Routes>
         <Route path="/eun-bean" element={<EunBean />} />
         <Route path="/hee-jung" element={<HeeJung />} />
-        <Route path="/hye-in" element={<Hyein />} />
+        <Route path="/" element={<Hyein />} />
         <Route path="/ji-soo" element={<Jisoo />} />
         <Route path="/seong-gyeong" element={<SeongGyeong />} />
       </Routes>

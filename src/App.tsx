@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import Router from "./Router";
 import { GlobalStyle } from "./style/globalStyle";
 import { theme } from "./style/theme";
+import "./firebase-messaging-sw.js";
 
 export default function App() {
   return (

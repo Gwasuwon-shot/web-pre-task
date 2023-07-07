@@ -27,7 +27,7 @@ self.addEventListener("activate", function (e) {
 // });
 
 self.addEventListener("push", (event) => {
-  consoleMessage(`${event}`);
+  console.log(event.data?.json());
 
   const message = event.data?.json();
   event.waitUntil(

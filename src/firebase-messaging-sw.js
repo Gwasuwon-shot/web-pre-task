@@ -29,6 +29,8 @@ export async function requestPermission() {
     vapidKey: import.meta.env.VITE_APP_VAPID_KEY,
   });
 
+  console.log(token);
+
   if (token) {
     console.log("token: ", token);
   } else console.log("Can not get Token");

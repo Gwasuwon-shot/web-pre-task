@@ -96,6 +96,16 @@ export default function JisooAlarm() {
     mutate(deviceToken);
   }, [deviceToken]);
 
+  function handleCopyClipBoard(token: string) {
+    try {
+      navigator.clipboard.writeText(token).then(() => {
+        alert("클립보드에 토큰이 복사되었어요.");
+      });
+    } catch (err) {
+      alert("링크 복사에 실패했습니다");
+    }
+  }
+
   return (
     <>
       <Button type="button" onClick={handleAllowAlarm}>
@@ -104,7 +114,7 @@ export default function JisooAlarm() {
       <Button type="button" onClick={handleAttend}>
         출석
       </Button>
-      {deviceToken}
+      <Button onClick={() => handleCopyClipBoard(deviceToken)}>토큰 복사하기</Button>
     </>
   );
 }

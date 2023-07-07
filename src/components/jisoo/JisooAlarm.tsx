@@ -38,39 +38,12 @@ export default function JisooAlarm() {
   // const app = initializeApp(firebaseConfig);
   // const messaging = getMessaging(app);
 
-  function handleAllowAlarm() {
-    // console.log("권한 요청 중...");
-    // Notification.requestPermission().then((permission) => {
-    //   if (permission === "granted") {
-    //     console.log("알림 권한이 허용됨");
-    //     // FCM 메세지 처리
-    //   } else {
-    //     console.log("알림 권한 허용 안됨");
-    //   }
-    // });
+  async function handleAllowAlarm() {
+    const permission = await Notification.requestPermission();
+    if (permission === "denied") {
+      console.log("알림 권한 허용 안됨");
+    }
   }
-
-  // const { mutate: throwToken } = useMutation(postToken, {
-  //   onSuccess: (res) => {
-  //     console.log(res);
-  //   },
-  // });
-
-  // async function handleAttend() {
-  //   // console.log("들어옴");
-  //   // const token = await getToken(messaging, {
-  //   //   vapidKey: import.meta.env.VITE_APP_VAPID_KEY,
-  //   // });
-  //   // console.log(token);
-  //   // if (token) {
-  //   //   throwToken(token);
-  //   //   console.log("token: ", token);
-  //   // } else console.log("Can not get Token");
-  //   // onMessage(messaging, (payload) => {
-  //   //   console.log("메시지가 도착했습니다.", payload);
-  //   //   // ...
-  //   // });
-  // }
 
   const { mutate } = useMutation(postToken, {
     onSuccess: (res) => {

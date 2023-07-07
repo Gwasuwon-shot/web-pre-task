@@ -25,6 +25,16 @@ export async function requestPermission() {
 
   console.log("알림 권한이 허용됨");
 
+  // eslint-disable-next-line no-undef
+  navigator.serviceWorker
+    .register("service-worker.js")
+    .then(function (registration) {
+      console.log("Service Worker 등록 성공:", registration);
+    })
+    .catch(function (error) {
+      console.log("Service Worker 등록 실패:", error);
+    });
+
   const token = await getToken(messaging, {
     vapidKey: import.meta.env.VITE_APP_VAPID_KEY,
   });

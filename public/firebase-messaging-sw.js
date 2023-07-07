@@ -28,6 +28,7 @@ self.addEventListener("push", function (e) {
   e.waitUntil(
     console.log("아니 들어는오냐?"),
     self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" }),
+    console.log("되냐고"),
   );
 });
 

@@ -26,7 +26,7 @@ self.addEventListener("push", function (e) {
   console.log(resultData.title, { body: resultData.body, icon: "/tutice.png" });
 
   // self.registration.showNotification(notificationTitle, notificationOptions);
-  self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" });
+  e.waitUntil(self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" }));
 });
 
 // self.addEventListener("push", (event) => {

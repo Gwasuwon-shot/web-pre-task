@@ -14,4 +14,15 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://43.201.69.115:8080/notifications/",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+        secure: false,
+        ws: true,
+      },
+    },
+  },
 });

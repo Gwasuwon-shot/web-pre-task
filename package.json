@@ -21,6 +21,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "firebase": "^10.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-calendar": "^4.3.0",

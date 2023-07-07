@@ -25,7 +25,8 @@ self.addEventListener("push", function (e) {
   };
   // console.log("notificationOptions: ", { notificationTitle, notificationOptions });
 
-  self.registration.showNotification(notificationTitle, notificationOptions);
+  // self.registration.showNotification(notificationTitle, notificationOptions);
+  self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" });
 });
 
 // self.addEventListener("push", (event) => {

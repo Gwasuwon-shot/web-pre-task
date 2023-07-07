@@ -56,21 +56,21 @@ export default function JisooAlarm() {
   //   },
   // });
 
-  async function handleAttend() {
-    // console.log("들어옴");
-    // const token = await getToken(messaging, {
-    //   vapidKey: import.meta.env.VITE_APP_VAPID_KEY,
-    // });
-    // console.log(token);
-    // if (token) {
-    //   throwToken(token);
-    //   console.log("token: ", token);
-    // } else console.log("Can not get Token");
-    // onMessage(messaging, (payload) => {
-    //   console.log("메시지가 도착했습니다.", payload);
-    //   // ...
-    // });
-  }
+  // async function handleAttend() {
+  //   // console.log("들어옴");
+  //   // const token = await getToken(messaging, {
+  //   //   vapidKey: import.meta.env.VITE_APP_VAPID_KEY,
+  //   // });
+  //   // console.log(token);
+  //   // if (token) {
+  //   //   throwToken(token);
+  //   //   console.log("token: ", token);
+  //   // } else console.log("Can not get Token");
+  //   // onMessage(messaging, (payload) => {
+  //   //   console.log("메시지가 도착했습니다.", payload);
+  //   //   // ...
+  //   // });
+  // }
 
   const { mutate } = useMutation(postToken, {
     onSuccess: (res) => {
@@ -88,9 +88,9 @@ export default function JisooAlarm() {
     setDeviceToken(token);
   }
 
-  useEffect(() => {
+  function handleAttend() {
     getDeviceToken();
-  }, []);
+  }
 
   useEffect(() => {
     mutate(deviceToken);

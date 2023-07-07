@@ -1,5 +1,8 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable react/jsx-no-bind */
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import styled from "styled-components";
 
 export default function JisooAlarm() {
   // Import the functions you need from the SDKs you need
@@ -50,12 +53,18 @@ export default function JisooAlarm() {
 
   return (
     <>
-      <button type="button" onClick={handleAllowAlarm}>
+      <Button type="button" onClick={handleAllowAlarm}>
         알림허용
-      </button>
-      <button type="button" onClick={handleAttend}>
+      </Button>
+      <Button type="button" onClick={handleAttend}>
         출석
-      </button>
+      </Button>
     </>
   );
 }
+
+const Button = styled.button`
+  border: 1px solid black;
+
+  padding: 2rem;
+`;

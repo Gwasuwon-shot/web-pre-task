@@ -17,11 +17,11 @@ self.addEventListener("push", function (e) {
   const notificationTitle = resultData.title;
   const notificationOptions = {
     body: resultData.body,
-    icon: resultData.image,
+    icon: "/tutice.png",
     tag: resultData.tag,
     ...resultData,
   };
-  console.log("push: ", { resultData, notificationTitle, notificationOptions });
+  console.log("notificationOptions: ", { resultData, notificationTitle, notificationOptions });
 
   self.registration.showNotification(notificationTitle, notificationOptions);
 });

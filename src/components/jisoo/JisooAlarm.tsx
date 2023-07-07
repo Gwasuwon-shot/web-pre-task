@@ -104,6 +104,7 @@ export default function JisooAlarm() {
       <Button type="button" onClick={handleAttend}>
         출석
       </Button>
+      {deviceToken}
     </>
   );
 }

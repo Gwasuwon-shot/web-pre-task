@@ -18,7 +18,7 @@ self.addEventListener("push", function (e) {
 
   const notificationOptions = {
     body: resultData.body,
-    icon: "/tutice.png",
+    icon: "./tutice.png",
     // tag: resultData.tag,
     // ...resultData,
   };

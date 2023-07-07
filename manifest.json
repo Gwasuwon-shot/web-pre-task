@@ -3,17 +3,12 @@
   "name": "튜티스",
   "icons": [
     {
-      "src": "https://item.kakaocdn.net/do/084c22b7cf3eb13232413111e6d383c2f604e7b0e6900f9ac53a43965300eb9a",
-      "type": "image/png",
-      "sizes": "64x64"
-    },
-    {
-      "src": "https://item.kakaocdn.net/do/084c22b7cf3eb13232413111e6d383c2f604e7b0e6900f9ac53a43965300eb9a",
+      "src": "tutice.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://item.kakaocdn.net/do/084c22b7cf3eb13232413111e6d383c2f604e7b0e6900f9ac53a43965300eb9a",
+      "src": "tutice.png",
       "type": "image/png",
       "sizes": "512x512"
     }

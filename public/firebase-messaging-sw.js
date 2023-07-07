@@ -18,7 +18,7 @@ self.addEventListener("push", function (e) {
 
   const notificationOptions = {
     body: resultData.body,
-    icon: "https://item.kakaocdn.net/do/084c22b7cf3eb13232413111e6d383c2f604e7b0e6900f9ac53a43965300eb9a",
+    icon: "/tutice.png",
     // tag: resultData.tag,
     // ...resultData,
   };

@@ -3,17 +3,17 @@
   "name": "튜티스",
   "icons": [
     {
-      "src": "tutice.png",
+      "src": "./public/tutice.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "tutice.png",
+      "src": "./public/tutice.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "tutice.png",
+      "src": "./public/tutice.png",
       "type": "image/png",
       "sizes": "512x512"
     }

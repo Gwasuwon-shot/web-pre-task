@@ -1,7 +1,7 @@
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";
 import Router from "./Router";
-import "./firebase-messaging-sw.js";
+import "./service-worker.js";
 import { GlobalStyle } from "./style/globalStyle";
 import { theme } from "./style/theme";
 

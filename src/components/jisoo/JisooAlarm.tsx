@@ -89,6 +89,7 @@ export default function JisooAlarm() {
         출석
       </Button>
       <Button onClick={() => handleCopyClipBoard(deviceToken)}>토큰 복사하기</Button>
+      {deviceToken}
     </>
   );
 }

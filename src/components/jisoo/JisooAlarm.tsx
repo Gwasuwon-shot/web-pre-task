@@ -34,7 +34,7 @@ export default function JisooAlarm() {
     });
   }
 
-  function handleAttend() {
+  async function handleAttend() {
     const token = await getToken(messaging, {
       vapidKey: process.env.REACT_APP_VAPID_KEY,
     });

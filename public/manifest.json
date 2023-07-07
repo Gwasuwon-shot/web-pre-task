@@ -1,0 +1,25 @@
+{
+  "short_name": "Tutice",
+  "name": "튜티스",
+  "icons": [
+    {
+      "src": "tutice.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "tutice.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "tutice.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FF5D5D",
+  "background_color": "#FF5D5D"
+}

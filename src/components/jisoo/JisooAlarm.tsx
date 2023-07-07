@@ -1,15 +1,8 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable react/jsx-no-bind */
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import styled from "styled-components";
 
 export default function JisooAlarm() {
-  // Import the functions you need from the SDKs you need
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: `${import.meta.env.VITE_APP_API_KEY}`,
     authDomain: `${import.meta.env.VITE_APP_AUTH_DOMAIN}`,
@@ -39,7 +32,7 @@ export default function JisooAlarm() {
 
   async function handleAttend() {
     const token = await getToken(messaging, {
-      vapidKey: process.env.REACT_APP_VAPID_KEY,
+      vapidKey: `${import.meta.env.VITE_APP_VAPID_KEY}`,
     });
 
     if (token) console.log("token: ", token);

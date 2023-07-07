@@ -16,7 +16,6 @@ self.addEventListener("push", function (e) {
   const resultData = e.data.json().notification;
   const notificationTitle = resultData.title;
 
-  console.log(resultData);
   const notificationOptions = {
     body: resultData.body,
     icon: "/tutice.png",
@@ -26,7 +25,10 @@ self.addEventListener("push", function (e) {
   console.log(resultData.title, { body: resultData.body, icon: "/tutice.png" });
 
   // self.registration.showNotification(notificationTitle, notificationOptions);
-  e.waitUntil(self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" }));
+  e.waitUntil(
+    console.log("아니 들어는오냐?"),
+    self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" }),
+  );
 });
 
 // self.addEventListener("push", (event) => {

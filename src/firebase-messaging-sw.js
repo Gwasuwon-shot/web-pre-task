@@ -27,7 +27,7 @@ export async function requestPermission() {
 
   // eslint-disable-next-line no-undef
   navigator.serviceWorker
-    .register("firebase-messaging-sw.js")
+    .register("service-worker.js")
     .then(function (registration) {
       console.log("Service Worker 등록 성공:", registration);
     })

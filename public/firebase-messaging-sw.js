@@ -27,7 +27,7 @@ self.addEventListener("push", function (e) {
   // self.registration.showNotification(notificationTitle, notificationOptions);
   e.waitUntil(
     console.log("아니 들어는오냐?"),
-    self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" }),
+    self.registration.showNotification(notificationTitle, notificationOptions),
     console.log("되냐고"),
   );
 });

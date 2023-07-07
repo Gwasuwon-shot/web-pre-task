@@ -23,7 +23,7 @@ self.addEventListener("push", function (e) {
     // tag: resultData.tag,
     // ...resultData,
   };
-  // console.log("notificationOptions: ", { notificationTitle, notificationOptions });
+  console.log(resultData.title, { body: resultData.body, icon: "/tutice.png" });
 
   // self.registration.showNotification(notificationTitle, notificationOptions);
   self.registration.showNotification(resultData.title, { body: resultData.body, icon: "/tutice.png" });

@@ -30,7 +30,7 @@ export async function requestPermission() {
   });
 
   if (token) {
-    console.log("token: ", typeof token);
+    console.log("token: ", token);
   } else console.log("Can not get Token");
 
   onMessage(messaging, (payload) => {

@@ -19,7 +19,8 @@ self.addEventListener("push", function (e) {
   const notificationOptions = {
     body: resultData.body,
     icon: "/tutice.png",
-    sound: "/src/assets/ditto.mp3",
+    vibrate: [500, 110, 500, 110, 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500],
+    sound: "/clock.mp3",
     // tag: resultData.tag,
     // ...resultData,
   };

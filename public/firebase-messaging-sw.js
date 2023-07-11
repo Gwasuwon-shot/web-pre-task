@@ -19,6 +19,7 @@ self.addEventListener("push", function (e) {
   const notificationOptions = {
     body: resultData.body,
     icon: "/tutice.png",
+    sound: "/src/assets/ditto.mp3",
     // tag: resultData.tag,
     // ...resultData,
   };

@@ -1,10 +1,11 @@
-import { ReactIc } from "../assets";
+import JisooAlarm from "../components/jisoo/JisooAlarm";
+import JisooCalendar from "../components/jisoo/JisooCalendar";
 
 export default function Jisoo() {
   return (
     <>
-      <ReactIc />
-      <div>Jisoo</div>
+      <JisooCalendar />
+      <JisooAlarm />
     </>
   );
 }

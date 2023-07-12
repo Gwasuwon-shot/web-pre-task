@@ -26,9 +26,9 @@ interface Font {
   lineHeight: number;
 }
 
-function FONT({weight, size, lineHeight }: Font): string {
+function FONT({ weight, size, lineHeight }: Font): string {
   return `
-    font-family: "Pretendard"
+    font-family: "Pretendard";
     font-weight : ${weight};
     font-size : ${size}rem;
     line-height : ${lineHeight}rem;
@@ -46,13 +46,11 @@ const fonts = {
   caption_large: FONT({ weight: 300, size: 3, lineHeight: 3.9 }),
   title: FONT({ weight: 300, size: 5, lineHeight: 6.5 }),
   input: FONT({ weight: 400, size: 2, lineHeight: 3.4 }),
-
   message: FONT({ weight: 400, size: 1.6, lineHeight: 1.9 }),
   typography_title: FONT({ weight: 700, size: 2, lineHeight: 2 }),
   typography_intro: FONT({ weight: 600, size: 1.5, lineHeight: 2.4 }),
   typography_content: FONT({ weight: 500, size: 1.5, lineHeight: 2.4 }),
   checkbox: FONT({ weight: 400, size: 1.6, lineHeight: 1.6 }),
-
 };
 
 export type FontsTypes = typeof fonts;
